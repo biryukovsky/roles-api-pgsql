@@ -6,7 +6,7 @@ metadata:
     nginx.ingress.kubernetes.io/rewrite-target: /api/$1
 spec:
   rules:
-  - host: {{ envs.APP_HOST | default(value="roles-api-pgsql.itass.local") }}
+  - host: {{ envs.APP_HOST }}
     http:
       paths:
       - path: /api/?(.*)
@@ -26,7 +26,7 @@ metadata:
     nginx.kubernetes.io/canary-by-cookie: "kalinin"
 spec:
   rules:
-  - host: {{ envs.APP_HOST | default(value="roles-api-pgsql.itass.local") }}
+  - host: {{ envs.APP_HOST }}
     http:
       paths:
       - path: /api/?(.*)

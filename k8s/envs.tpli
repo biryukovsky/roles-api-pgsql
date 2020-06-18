@@ -1,0 +1,26 @@
+              - name: LISTEN_PORT
+                value: "{{ envs.LISTEN_PORT | default(value=8788) }}"
+              - name: LISTEN_HOST
+                value: "{{ envs.LISTEN_HOST | default(value="0.0.0.0") }}"
+              - name: DB_NAME
+                value: "{{ envs.DB_NAME }}"
+              - name: DB_MAX_CON
+                value: "{{ envs.DB_MAX_CON | default(value=30) }}"
+              - name: DB_USER
+                value: "{{ envs.DB_USER }}"
+              - name: DB_PASSWORD
+                value: "{{ envs.DB_PASSWORD }}"
+              - name: DB_HOST
+                value: "{{ envs.DB_HOST }}"
+              - name: DB_PORT
+                value: "{{ envs.DB_PORT }}"
+              - name: LOG_LEVEL
+                value: "{{ envs.LOG_LEVEL | default(value="WARNING") }}"
+              - name: NEW_RELIC_DEVELOPER_MODE
+                value: "{{ envs.NEW_RELIC_DEVELOPER_MODE | default(value=0) }}"
+              - name: NEW_RELIC_ENABLE
+                value: "{{ envs.NEW_RELIC_ENABLE | default(value=0) }}"
+              - name: NEW_RELIC_CONFIG_FILE
+                value: "{{ envs.NEW_RELIC_CONFIG_FILE | default(value="/newrelic.ini") }}"
+              - name: CI_PIPELINE_ID
+                value: "{{ envs.CI_PIPELINE_ID }}"

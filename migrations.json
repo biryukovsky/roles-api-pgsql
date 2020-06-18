@@ -1,0 +1,7 @@
+{
+  "history": "migrations",
+  "directory": "migrations",
+  "models": [
+    "roles_api_pgsql.models.role.Role"
+  ]
+}

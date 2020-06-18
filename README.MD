@@ -7,10 +7,9 @@ Quick Run
 ```bash
 cd roles_api_pgsql
 pipenv install --dev && pipenv shell
-python setup.py develop
-# if you are using direnv
 cp .env.example .env
 direnv allow
+python setup.py install
 ```
 
 For local development we strongly recommend using [direnv](https://direnv.net/)
@@ -28,5 +27,7 @@ Configure .env file or set OS environments:
 
 Run server with command:
 ```bash
-roles_api_pgsql-ctl server run
+roles-api-pgsql-ctl server run
+# or with newrelic
+newrelic-admin run-program roles-api-pgsql-ctl server run
 ```

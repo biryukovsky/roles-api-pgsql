@@ -24,6 +24,7 @@ class Settings:
     listen_port: int = int(os.getenv('LISTEN_PORT'))
     listen_host: str = os.getenv('LISTEN_HOST')
     log_level: str = os.getenv('LOG_LEVEL')
+    redis_host: str = os.getenv('REDIS_HOST')
 
 
 def build_config():

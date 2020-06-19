@@ -10,6 +10,7 @@ pipenv install --dev && pipenv shell
 cp .env.example .env
 direnv allow
 python setup.py install
+pem migrate
 ```
 
 For local development we strongly recommend using [direnv](https://direnv.net/)

@@ -8,8 +8,9 @@ from roles_api_pgsql.entities.requests import RequestPostDummy
 from roles_api_pgsql.entities.responses import ResponseGetDummyData, ResponseGetDummy, \
     ResponseInternalError
 from roles_api_pgsql.services.dummy import get_dummy, post_dummy
-from roles_api_pgsql.services.role import get_single_role, create_role, delete_role, update_role
-from roles_api_pgsql.repos.role import RoleRepository
+from roles_api_pgsql.services.role import (get_role_list, get_single_role,
+                                           create_role, delete_role,
+                                           update_role, )
 
 
 cache = SimpleMemoryCache(serializer=JsonSerializer())
@@ -50,11 +51,7 @@ class DummyHandler(web.View):
 
 class RolesListHandler(web.View):
     async def get(self):
-        roles_list = await RoleRepository.get_list()
-        resp = [{'id': r.id,
-                 'name': r.name,
-                 'readable': r.readable,}
-                for r in roles_list]
+        resp = await get_role_list()
         return web.json_response({'data': resp})
 
 
